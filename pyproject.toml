@@ -1,21 +1,13 @@
 [project]
-name = "awesome-python-project"
+name = "mudpack"
 version = "0.1.0"
-description = ""
+description = "A simple UDP client for Python"
 readme = "README.md"
 requires-python = ">=3.14.1"
 license = { file = "LICENSE" }
 dependencies = []
 
 [project.optional-dependencies]
-test = [
-    "covdefaults",
-    "pytest",
-    "pytest-cov",
-    "pytest-randomly",
-    "pytest-xdist",
-    "time-machine",
-]
 
 [build-system]
 requires = ["setuptools"]

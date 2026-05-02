@@ -1,6 +1,8 @@
-# Awesome Python Project
+# Mudpack
 
-This is a template for python projects.
+Sending UDP requests is simple. Let's make it even easier.
+
+Mudpack is a simple UDP client for python.
 
 ## Virtual Environment
 
