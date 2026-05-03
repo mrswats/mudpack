@@ -1,11 +1,13 @@
 [project]
 name = "mudpack"
-version = "0.1.0"
+version = "1.0.0"
 description = "A simple UDP client for Python"
 readme = "README.md"
 requires-python = ">=3.10"
-license = { file = "LICENSE" }
 dependencies = []
+
+[project.license]
+file = "LICENSE"
 
 [project.optional-dependencies]
 
@@ -15,8 +17,7 @@ requires = [
 ]
 build-backend = "setuptools.build_meta"
 
-[tool.setuptools.packages]
-find = {}
+[tool.setuptools.packages.find]
 
 [tool.autoflake]
 recursive = true
@@ -26,11 +27,13 @@ files = "mudpack.py"
 ignore_missing_imports = true
 strict = true
 exclude = [
-    '^tests/test_.+.py$',
+    "^tests/test_.+.py$",
 ]
 
 [tool.coverage.run]
-plugins = ["covdefaults"]
+plugins = [
+    "covdefaults",
+]
 omit = []
 
 [tool.coverage.html]
