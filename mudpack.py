@@ -1,11 +1,7 @@
 import socket
-import sys
 from types import TracebackType
 
-if sys.version_info.minor <= 10:  # pragma: no cover
-    from typing_extensions import Self
-else:
-    from typing import Self
+from typing_extensions import Self
 
 
 class Client:
