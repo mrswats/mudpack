@@ -14,7 +14,7 @@ def m_socket():
 
 @pytest.fixture
 def client(m_socket):
-    return mudpack.UDPClient(hostname="localhost", port=10_000)
+    return mudpack.Client(hostname="localhost", port=10_000)
 
 
 def test_mudpack_client_creates_udp_socket(m_socket, client):
@@ -44,7 +44,7 @@ def test_mudpack_client_send_bytes(m_socket, client):
 
 
 def test_mudpack_client_as_context_manager(m_socket):
-    with mudpack.UDPClient(hostname="localhost", port=10_000) as mp:
+    with mudpack.Client(hostname="localhost", port=10_000) as mp:
         mp.send("foo")
 
     m_socket().send.assert_called_with(b"foo")

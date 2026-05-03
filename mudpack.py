@@ -3,7 +3,14 @@ from types import TracebackType
 from typing import Self
 
 
-class UDPClient:
+class Client:
+    """Simple UDP Client for Python.
+
+    Args:
+        * hostname: string -> Hostname of the UDP server
+        * port: int -> Port for the UDP server
+    """
+
     def __init__(self, hostname: str, port: int) -> None:
         self.hostname = hostname
         self.port = port
@@ -49,5 +56,5 @@ class UDPClient:
 
 
 def send(hostname: str, port: int, message: str | bytes) -> None:
-    with UDPClient(hostname=hostname, port=port) as client:
+    with Client(hostname=hostname, port=port) as client:
         client.send(message)
