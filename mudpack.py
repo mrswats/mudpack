@@ -20,17 +20,18 @@ class UDPClient:
 
     def _close(self) -> None:
         self._socket.close()
+        self._connected = False
 
-    def _send(self, message: bytes) -> None:
-        self._socket.send(message)
+    def _send(self, message: bytes) -> int:
+        return self._socket.send(message)
 
-    def send(self, message: str | bytes) -> None:
+    def send(self, message: str | bytes) -> int:
         self._connect()
 
         if isinstance(message, str):
             message = message.encode()
 
-        self._send(message)
+        return self._send(message)
 
     def __enter__(self) -> Self:
         return self

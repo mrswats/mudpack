@@ -20,11 +20,11 @@ find = {}
 recursive = true
 
 [tool.mypy]
-files = "."
+files = "mudpack.py"
 ignore_missing_imports = true
 strict = true
 exclude = [
-    "tests/",
+    '^tests/test_.+.py$',
 ]
 
 [tool.coverage.run]
