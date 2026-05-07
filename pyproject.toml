@@ -17,7 +17,17 @@ requires = [
 ]
 build-backend = "setuptools.build_meta"
 
+[tool.setuptools]
+py-modules = [
+    "mudpack",
+]
+
 [tool.setuptools.packages.find]
+exclude = [
+    "tests",
+    "testing",
+]
+
 
 [tool.autoflake]
 recursive = true
